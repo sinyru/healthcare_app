@@ -13,12 +13,14 @@ h1{
   border-radius: 100px;
   margin: 0 auto;
   font-weight:bold;
+  background: white;
 }
 
 body{
 	margin:0;
 	color:#6a6f8c;
-	background:white;
+	background:url(http://i.imgur.com/SP06zfV.png);
+  background-size: cover;
 	font:600 16px/18px 'Open Sans',sans-serif;
 }
 *,:after,:before{box-sizing:border-box}
