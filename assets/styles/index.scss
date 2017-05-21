@@ -2,24 +2,64 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 
-h1{
-  text-align: center;
-  color: black;
+.login-wrap {
+  // display:none;
 }
 
-#app-title{
-  border: 10px solid blue;
-  width: 60%;
-  border-radius: 100px;
-  margin: 0 auto;
-  font-weight:bold;
-  background: white;
+.after-login {
+  display:none;
+}
+
+.change-password-div {
+  display:none;
+}
+
+#change-password {
+  margin-bottom: 5px;
+}
+
+#btn-change-password {
+  margin:5px;
+}
+
+#nav-panel {
+  text-align: center;
+}
+
+.sections {
+  text-transform: uppercase;
+}
+
+nav li {
+  float:none;
+  font-family: 'Questrial', sans-serif;
+  letter-spacing: .08rem;
+  font-size: 1.7rem;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 2;
+  color: white;
+  border-radius: 5px;
+  margin:auto 1%;
+  background:rgba(40,57,101,.9);
+}
+
+nav li:hover {
+  background-color: silver;
+}
+
+header {
+  background-color: #373637;
+  color: white;
+  padding: 1rem;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 body{
 	margin:0;
-	color:#6a6f8c;
-	background:url(http://i.imgur.com/SP06zfV.png);
+	background:url(http://i.imgur.com/sqlQ5sd.jpg);
   background-size: cover;
 	font:600 16px/18px 'Open Sans',sans-serif;
 }
@@ -29,6 +69,7 @@ body{
 a{color:inherit;text-decoration:none}
 
 .login-wrap{
+  color:#6a6f8c;
 	width:100%;
 	margin:auto;
 	max-width:525px;

@@ -9,6 +9,16 @@ $(() => {
   auth.addHandlers();
 });
 
+$("#btn-change-password").on('click', ()=>{
+  $(".change-password-div").show();
+  $(".after-login").hide();
+});
+
+$("#cancel-change-password").on('click', ()=>{
+  $(".change-password-div").hide();
+  $(".after-login").show();
+});
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example');
 

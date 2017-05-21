@@ -10,16 +10,51 @@
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <!-- Stylesheets css -->
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Questrial|Old+Standard+TT:400,400italic|Open+Sans:400,600">
+
     </head>
     <body class="container-fluid">
-      <div id="app-title">
-        <h1>Hospital Management System</h1>
+      <header id="main-nav" class="page-header clearfix">
+
+        <h1 class="logo"><span>Heathcare Management System</span></h1>
+        <div class="after-login">
+          <button class="btn btn-xs" id="btn-change-password">Change Password</button>
+          <form id="sign-out">
+            <fieldset>
+              <button class="btn btn-xs" type="submit" name="submit">Sign Out</button>
+            </fieldset>
+          </form>
+        </div>
+      </header>
+
+      <div class="change-password-div">
+        <form id="change-password">
+          <fieldset>
+            <label class="old">
+              Old Password
+              <input type="password" name="passwords[old]">
+            </label>
+            <label class="new">
+              New Password
+              <input type="password" name="passwords[new]">
+            </label>
+            <br>
+            <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+          </fieldset>
+        </form>
+
+        <button class="btn btn-danger" id="cancel-change-password">Cancel</button>
       </div>
+
       <div class="login-wrap">
       	<div class="login-html">
       		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
       		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
       		<div class="login-form">
+            <!-- sign in form -->
       			<div class="sign-in-htm">
 
               <form id="sign-in">
@@ -38,8 +73,7 @@
 
       				<div class="hr"></div>
       			</div>
-
-
+            <!-- sign up form -->
       			<div class="sign-up-htm">
               <form id="sign-up">
         				<div class="group">
@@ -68,8 +102,21 @@
       	</div>
       </div>
 
+      <div class="after-login">
 
+        <div id="nav-panel">
+          <nav>
+            <ul>
+              <li><button class="btn btn-primary sections">Appointments</button></li>
+              <li><button class="btn btn-primary sections">Doctors</button></li>
+              <li><button class="btn btn-primary sections">Drugs</button></li>
+              <li><button class="btn btn-primary sections">Patients</button></li>
+              <li><button class="btn btn-primary sections">Prescriptions</button></li>
+            </ul>
+          </nav>
+        </div>
 
+      </div>
 
     </body>
 </html>
