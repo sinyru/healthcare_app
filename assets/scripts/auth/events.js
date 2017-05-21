@@ -5,6 +5,7 @@ const api = require('./api');
 const ui = require('./ui');
 const store = require('../store');
 
+
 const onSignIn = function (event) {
   event.preventDefault();
 
@@ -60,6 +61,7 @@ const onSignOut = function (event) {
   .catch(ui.failureSignOut)
   ;
 };
+
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);

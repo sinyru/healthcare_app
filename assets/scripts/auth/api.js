@@ -1,10 +1,9 @@
 'use strict';
 
 const config = require('../config');
-
 const store = require('../store');
 
-// const gameData = require('../gameData');
+
 
 const signUp = function (data) {
 

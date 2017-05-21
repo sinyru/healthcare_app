@@ -5,7 +5,7 @@ const failureSignUp = (error) => {
 };
 
 const successSignIn = () => {
-  $(".login-wrap").hide();
+  $(".before-login").hide();
   $(".after-login").show();
 };
 
@@ -16,7 +16,7 @@ const failureSignIn = (data) => {
 };
 
 const successSignOut = (data) => {
-  $(".login-wrap").show();
+  $(".before-login").show();
   $(".after-login").hide();
 };
 
