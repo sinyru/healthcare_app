@@ -14,6 +14,18 @@ const patientIndex = function() {
   });
 };
 
+const patientCreate = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/patients',
+    method: 'POST',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+    data,
+  });
+};
+
 module.exports = {
   patientIndex,
+  patientCreate,
 };
