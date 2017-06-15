@@ -35,11 +35,22 @@ const onPatientDelete = function(event) {
     ;
 };
 
+const onPatientShow = function(event) {
+  event.preventDefault();
+  let id = event.target.dataset.id;
+  console.log(id);
+
+  api.patientShow(id)
+    .then(ui.successShow)
+    ;
+};
 
 const addHandlers = () => {
   $('.patient-index').on('click', onPatientIndex);
   $('.patient-display').on('submit', '#patient-create', onPatientCreate);
   $('.patient-display').on('click', '#patient-delete', onPatientDelete);
+  $('.patient-display').on('click', '#patient-update', onPatientShow);
+
 };
 
 
