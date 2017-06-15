@@ -31,6 +31,7 @@
     <th>Weight</th>
     <th>Phone</th>
     <th>Primary Doctor</th>
+    <th>Adjustments</th>
   </tr>
 
   {{#each patients as |patient|}}
@@ -42,7 +43,14 @@
       <td>{{patient.weight}}</td>
       <td>{{patient.phone}}</td>
       <td>{{patient.primary_doctor}}</td>
-      <td><button class="btn btn-danger btn-xs" id="patient-delete" data-id={{patient.id}}>Delete</button></td>
+      <td>
+        <div class="patient-adjustment">
+          <button class="btn btn-primary btn-xs" id="patient-update" data-id={{patient.id}}>Update</button>
+        </div>
+        <div class="patient-adjustment" id="patient-delete-div">
+          <button class="btn btn-danger btn-xs" id="patient-delete" data-id={{patient.id}}>X</button>
+        </div>
+      </td>
     </tr>
   {{/each}}
 

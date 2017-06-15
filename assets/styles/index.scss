@@ -10,6 +10,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   display:none;
 }
 
+.patient-adjustment {
+  float: left;
+}
+
+#patient-delete-div {
+  float: right;
+}
+
 table {
     width:100%;
 }
