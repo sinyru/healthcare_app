@@ -22,5 +22,11 @@ $("#cancel-change-password").on('click', ()=>{
   $(".after-login").show();
 });
 
+$(".patient-display").on('click', "#patient-create-btn", ()=>{
+  $('.patients').hide();
+  $('#patient-create').show();
+  $('.patient-show').hide();
+});
+
 
 require('./example');

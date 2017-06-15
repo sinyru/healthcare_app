@@ -16,10 +16,9 @@ const onPatientIndex = function(event) {
 const onPatientCreate = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
 
   api.patientCreate(data)
-    .then((response)=>console.log(response))
+    .then(()=>onPatientIndex(event))
     .catch((error)=>console.log(error))
     ;
 };
@@ -27,10 +26,9 @@ const onPatientCreate = function(event) {
 const onPatientDelete = function(event) {
   event.preventDefault();
   let id = event.target.dataset.id;
-  console.log(id);
 
   api.patientDelete(id)
-    .then((response)=>console.log(response))
+    .then(()=>onPatientIndex(event))
     .catch((error)=>console.log(error))
     ;
 };
@@ -38,10 +36,18 @@ const onPatientDelete = function(event) {
 const onPatientShow = function(event) {
   event.preventDefault();
   let id = event.target.dataset.id;
-  console.log(id);
-
+  store.patientId=id;
   api.patientShow(id)
     .then(ui.successShow)
+    ;
+};
+
+const onPatientUpdate = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  let id=store.patientId;
+  api.patientUpdate(data, id)
+    .then(()=>onPatientIndex(event))
     ;
 };
 
@@ -50,7 +56,7 @@ const addHandlers = () => {
   $('.patient-display').on('submit', '#patient-create', onPatientCreate);
   $('.patient-display').on('click', '#patient-delete', onPatientDelete);
   $('.patient-display').on('click', '#patient-update', onPatientShow);
-
+  $('.patient-update').on('submit', '#patient-update-form', onPatientUpdate);
 };
 
 

@@ -1,5 +1,9 @@
 <br>
 
+<button class="btn btn-primary" id="patient-create-btn">Register New Patient</button>
+
+<br>
+
 <form id="patient-create">
   <fieldset>
       First Name:
@@ -16,7 +20,7 @@
       <input pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[phone]" maxlength="30">
       Primary Doctor:
       <input type="text" name="patient[primary_doctor]" maxlength="30">
-    <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+    <input class="btn btn-danger" type="submit" name="submit" value="Register">
   </fieldset>
 </form>
 
@@ -25,33 +29,16 @@
 <div class="patients">
 <table id="t01">
   <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Age</th>
-    <th>Height</th>
-    <th>Weight</th>
-    <th>Phone</th>
-    <th>Primary Doctor</th>
-    <th>Adjustments</th>
+    <th>Patient Name</th>
+    <th>Details</th>
+    <th>Remove</th>
   </tr>
 
   {{#each patients as |patient|}}
     <tr>
-      <td>{{patient.first_name}}</td>
-      <td>{{patient.last_name}}</td>
-      <td>{{patient.age}}</td>
-      <td>{{patient.height}}</td>
-      <td>{{patient.weight}}</td>
-      <td>{{patient.phone}}</td>
-      <td>{{patient.primary_doctor}}</td>
-      <td>
-        <div class="patient-adjustment">
-          <button class="btn btn-primary btn-xs" id="patient-update" data-id={{patient.id}}>Update</button>
-        </div>
-        <div class="patient-adjustment" id="patient-delete-div">
-          <button class="btn btn-danger btn-xs" id="patient-delete" data-id={{patient.id}}>X</button>
-        </div>
-      </td>
+      <td>{{patient.first_name}} {{patient.last_name}}</td>
+      <td><button class="btn btn-primary btn-xs" id="patient-update" data-id={{patient.id}}>Details</button></td>
+      <td><button class="btn btn-danger btn-xs" id="patient-delete" data-id={{patient.id}}>X</button></td>
     </tr>
   {{/each}}
 

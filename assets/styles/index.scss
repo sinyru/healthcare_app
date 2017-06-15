@@ -10,17 +10,16 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   display:none;
 }
 
+#patient-create {
+  display:none;
+  width:100px;
+}
+
 #patient-update-form{
-  // display: none;
+  width:100px;
 }
 
-.patient-adjustment {
-  float: left;
-}
 
-#patient-delete-div {
-  float: right;
-}
 
 table {
     width:100%;
