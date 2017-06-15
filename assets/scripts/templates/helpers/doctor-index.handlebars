@@ -1,0 +1,42 @@
+<br>
+
+<button class="btn btn-primary" id="doctor-create-btn">Register New Doctor</button>
+
+<br>
+
+<form id="doctor-create">
+  <fieldset>
+      First Name:
+      <input pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[first_name]" maxlength="30">
+      Last Name:
+      <input pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[last_name]" maxlength="30">
+      Specialty:
+      <input pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[specialty]" maxlength="30">
+      Phone:
+      <input pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[phone]" maxlength="30">
+      Location:
+      <input pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[location]" maxlength="30">
+    <input class="btn btn-danger" type="submit" name="submit" value="Register">
+  </fieldset>
+</form>
+
+<br>
+
+<div class="doctors">
+<table id="t01">
+  <tr>
+    <th>Doctor Name</th>
+    <th>Details</th>
+    <th>Remove</th>
+  </tr>
+
+  {{#each doctors as |doctor|}}
+    <tr>
+      <td>{{doctor.first_name}} {{doctor.last_name}}</td>
+      <td><button class="btn btn-primary btn-xs" id="doctor-update" data-id={{doctor.id}}>Details</button></td>
+      <td><button class="btn btn-danger btn-xs" id="doctor-delete" data-id={{doctor.id}}>X</button></td>
+    </tr>
+  {{/each}}
+
+</table>
+</div>

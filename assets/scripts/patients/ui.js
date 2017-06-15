@@ -11,6 +11,9 @@ const successIndex = (data) => {
   let patientHtml = patientIndexHandlebars({ patients: data.patients });
   $('.patient-display').html(patientHtml);
   $('.patient-show').hide();
+  $('.patient-display').show();
+  $('.doctor-display').hide();
+
 };
 
 const failureIndex = (error) => {
