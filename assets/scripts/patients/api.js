@@ -16,7 +16,7 @@ const patientIndex = function() {
 
 const patientCreate = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/patients',
+    url: config.apiOrigin + '/patients/',
     method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`,
@@ -25,7 +25,18 @@ const patientCreate = function (data) {
   });
 };
 
+const patientDelete = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/patients/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    }
+  });
+};
+
 module.exports = {
   patientIndex,
   patientCreate,
+  patientDelete,
 };

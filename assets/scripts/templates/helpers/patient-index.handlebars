@@ -1,3 +1,26 @@
+<br>
+
+<form id="patient-create">
+  <fieldset>
+      First Name:
+      <input pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[first_name]" maxlength="30">
+      Last Name:
+      <input pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[last_name]" maxlength="30">
+      Age:
+      <input pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[age]" maxlength="30">
+      Height:
+      <input pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[height]" maxlength="30">
+      Weight:
+      <input pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[weight]" maxlength="30">
+      Phone:
+      <input pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[phone]" maxlength="30">
+      Primary Doctor:
+      <input type="text" name="patient[primary_doctor]" maxlength="30">
+    <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+  </fieldset>
+</form>
+
+<br>
 
 <table id="t01">
   <tr>
@@ -19,6 +42,7 @@
       <td>{{patient.weight}}</td>
       <td>{{patient.phone}}</td>
       <td>{{patient.primary_doctor}}</td>
+      <td><button class="btn btn-danger btn-xs" id="patient-delete" data-id={{patient.id}}>Delete</button></td>
     </tr>
   {{/each}}
 
