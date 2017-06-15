@@ -10,6 +10,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   display:none;
 }
 
+.patient-details-child {
+  float: left;
+  width: 40%;
+}
+
 #patient-create {
   display:none;
   width:100px;
@@ -26,6 +31,22 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #doctor-update-form{
   width:100px;
+}
+
+#appointment-create {
+  display:none;
+  width:100px;
+}
+
+#appointment-update-form{
+  width:100px;
+}
+
+#patient-appointments-header {
+  background-color: black;
+  color: white;
+  border: 3px solid rgba(40, 57, 101, 0.9);
+  text-align: center;
 }
 
 table {

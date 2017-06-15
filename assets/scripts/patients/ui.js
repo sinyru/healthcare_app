@@ -13,7 +13,9 @@ const successIndex = (data) => {
   $('.patient-show').hide();
   $('.patient-display').show();
   $('.doctor-display').hide();
-
+  $('.appointment-display').hide();
+  $('.doctor-show').hide();
+  $('.appointment-show').hide();
 };
 
 const failureIndex = (error) => {
@@ -21,7 +23,10 @@ const failureIndex = (error) => {
 };
 
 const successShow = (data) => {
-  let patientUpdateHtml = patientUpdateHandlebars({ patient: data.patient });
+  let patientUpdateHtml = patientUpdateHandlebars({
+    patient: data.patient,
+    appointments: store.appointments,
+  });
   $('.patient-update').html(patientUpdateHtml);
   $('.patients').hide();
   $('#patient-create-btn').hide();

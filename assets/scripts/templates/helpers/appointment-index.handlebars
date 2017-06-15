@@ -1,0 +1,50 @@
+<br>
+
+<button class="btn btn-primary" id="appointment-create-btn">Register New Appointment</button>
+
+<br>
+
+<form id="appointment-create">
+  <fieldset>
+      Date On:
+      <textarea pattern=".{1,}" required title="1 characters minimum" type="input" name="appointment[date_on]" maxlength="60" rows="1"></textarea>
+      Location:
+      <textarea pattern=".{1,}" required title="1 characters minimum" type="input" name="appointment[location]" maxlength="60" rows="1"></textarea>
+      Patient:
+      <select class="appointment-patients" name="appointment[patient_id]">
+        {{#each patients as |patient|}}
+          <option  value={{patient.id}}>{{patient.first_name}} {{patient.last_name}}</option>
+        {{/each}}
+      </select>
+      Doctor:
+      <select class="appointment-doctors" name="appointment[doctor_id]">
+        {{#each doctors as |doctor|}}
+          <option  value={{doctor.id}}>{{doctor.first_name}} {{doctor.last_name}}</option>
+        {{/each}}
+      </select>
+      Comment:
+      <textarea pattern=".{1,}" required title="1 characters minimum" type="textarea" name="appointment[comment]" maxlength="100" rows="10" cols="30"></textarea>
+    <input class="btn btn-danger" type="submit" name="submit" value="Register">
+  </fieldset>
+</form>
+
+<br>
+
+<div class="appointments">
+<table id="t01">
+  <tr>
+    <th>Patient's Appointment with Doctor on Date</th>
+    <th>Details</th>
+    <th>Remove</th>
+  </tr>
+
+  {{#each appointments as |appointment|}}
+    <tr>
+      <td>{{appointment.patient_name}} with {{appointment.doctor_name}} on {{appointment.date_on}}</td>
+      <td><button class="btn btn-primary btn-xs" id="appointment-update" data-id={{appointment.id}}>Details</button></td>
+      <td><button class="btn btn-danger btn-xs" id="appointment-delete" data-id={{appointment.id}}>X</button></td>
+    </tr>
+  {{/each}}
+
+</table>
+</div>

@@ -1,0 +1,45 @@
+<div class="appointment-show">
+<table id="t01">
+  <tr>
+    <th>Date On</th>
+    <th>Location</th>
+    <th>Patient</th>
+    <th>Doctor</th>
+    <th>Department</th>
+    <th>Comment</th>
+  </tr>
+
+  <tr>
+    <td>{{appointment.date_on}}</td>
+    <td>{{appointment.location}}</td>
+    <td>{{appointment.patient_name}}</td>
+    <td>{{appointment.doctor_name}}</td>
+    <td>{{appointment.doctor_specialty}}</td>
+    <td>{{appointment.comment}}</td>
+  </tr>
+</table>
+
+
+<form id="appointment-update-form">
+  <fieldset>
+      Date On:
+      <textarea value={{appointment.date_on}} pattern=".{1,}" required title="1 characters minimum" type="input" name="appointment[date_on]" maxlength="50" rows="1">{{appointment.date_on}}</textarea>
+      Location:
+      <textarea value={{appointment.location}} pattern=".{1,}" required title="1 characters minimum" type="input" name="appointment[location]" maxlength="60" rows="1">{{appointment.location}}</textarea>
+      Patient:
+      <select class="appointment-patients" name="appointment[patient_id]">
+        {{#each patients as |patient|}}
+          <option  value={{patient.id}}>{{patient.first_name}} {{patient.last_name}}</option>
+        {{/each}}
+      </select>
+      Doctor:
+      <select class="appointment-doctors" name="appointment[doctor_id]">
+        {{#each doctors as |doctor|}}
+          <option  value={{doctor.id}}>{{doctor.first_name}} {{doctor.last_name}}</option>
+        {{/each}}
+      </select>
+      Comment:
+      <textarea value={{appointment.comment}} pattern=".{1,}" required title="1 characters minimum" type="input" name="appointment[comment]" maxlength="30" rows="10" cols="30">{{appointment.comment}}</textarea>
+    <input class="btn btn-danger" type="submit" name="submit" value="Change">
+  </fieldset>
+</form>

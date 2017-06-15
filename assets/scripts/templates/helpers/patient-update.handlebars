@@ -22,22 +22,51 @@
 </table>
 
 
-<form id="patient-update-form">
-  <fieldset>
-      First Name:
-      <input value={{patient.first_name}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[first_name]" maxlength="30">
-      Last Name:
-      <input value={{patient.last_name}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[last_name]" maxlength="30">
-      Age:
-      <input value={{patient.age}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[age]" maxlength="30">
-      Height:
-      <input value={{patient.height}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[height]" maxlength="30">
-      Weight:
-      <input value={{patient.weight}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[weight]" maxlength="30">
-      Phone:
-      <input value={{patient.phone}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[phone]" maxlength="30">
-      Primary Doctor:
-      <input value={{patient.primary_doctor}} type="text" name="patient[primary_doctor]" maxlength="30">
-    <input class="btn btn-danger" type="submit" name="submit" value="Change">
-  </fieldset>
-</form>
+<div class="patient-details">
+  <div class="patient-details-child">
+    <form id="patient-update-form">
+      <fieldset>
+          First Name:
+          <input value={{patient.first_name}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[first_name]" maxlength="30">
+          Last Name:
+          <input value={{patient.last_name}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[last_name]" maxlength="30">
+          Age:
+          <input value={{patient.age}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[age]" maxlength="30">
+          Height:
+          <input value={{patient.height}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[height]" maxlength="30">
+          Weight:
+          <input value={{patient.weight}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[weight]" maxlength="30">
+          Phone:
+          <input value={{patient.phone}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[phone]" maxlength="30">
+          Primary Doctor:
+          <input value={{patient.primary_doctor}} type="text" name="patient[primary_doctor]" maxlength="30">
+        <input class="btn btn-danger" type="submit" name="submit" value="Change">
+      </fieldset>
+    </form>
+  </div>
+
+
+  <br>
+  <br>
+  <div class="patient-details-child" id="patient-appointments">
+    <table id="t01">
+
+      <h3 id="patient-appointments-header">Appointments</h3>
+
+      <tr>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Specialty</th>
+        <th>Location</th>
+      </tr>
+      {{#each appointments as |appointment|}}
+        <tr>
+          <td>{{appointment.doctor_name}}</td>
+          <td>{{appointment.date_on}}</td>
+          <td>{{appointment.doctor_specialty}}</td>
+          <td>{{appointment.location}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>
