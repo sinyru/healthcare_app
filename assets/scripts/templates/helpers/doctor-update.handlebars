@@ -17,19 +17,49 @@
   </tr>
 </table>
 
+<div class="doctor-details">
+  <div class="doctor-details-child">
+    <form id="doctor-update-form">
+      <fieldset>
+          First Name:
+          <input value={{doctor.first_name}} pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[first_name]" maxlength="30">
+          Last Name:
+          <input value={{doctor.last_name}} pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[last_name]" maxlength="30">
+          Specialty:
+          <textarea value={{doctor.specialty}} pattern=".{1,}" required title="1 characters minimum" type="input" name="doctor[specialty]" maxlength="30" rows="1">{{doctor.specialty}}</textarea>
+          Phone:
+          <input value={{doctor.phone}} pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[phone]" maxlength="30">
+          Location:
+          <textarea value={{doctor.location}} pattern=".{1,}" required title="1 characters minimum" type="input" name="doctor[location]" maxlength="30" rows="1">{{doctor.location}}</textarea>
+        <input class="btn btn-danger" type="submit" name="submit" value="Change">
+      </fieldset>
+    </form>
+  </div>
 
-<form id="doctor-update-form">
-  <fieldset>
-      First Name:
-      <input value={{doctor.first_name}} pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[first_name]" maxlength="30">
-      Last Name:
-      <input value={{doctor.last_name}} pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[last_name]" maxlength="30">
-      Specialty:
-      <input value={{doctor.specialty}} pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[specialty]" maxlength="30">
-      Phone:
-      <input value={{doctor.phone}} pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[phone]" maxlength="30">
-      Location:
-      <input value={{doctor.location}} pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[location]" maxlength="30">
-    <input class="btn btn-danger" type="submit" name="submit" value="Change">
-  </fieldset>
-</form>
+<br>
+<br>
+
+  <div class="doctor-details-child" id="doctor-appointments">
+    <table id="t01">
+
+      <h3 id="doctor-appointments-header">Appointments With Patient</h3>
+
+      <tr>
+        <th>Patient</th>
+        <th>Date</th>
+        <th>Specialty</th>
+        <th>Location</th>
+        <th>Comment</th>
+      </tr>
+      {{#each appointments as |appointment|}}
+        <tr>
+          <td>{{appointment.patient_name}}</td>
+          <td>{{appointment.date_on}}</td>
+          <td>{{appointment.doctor_specialty}}</td>
+          <td>{{appointment.location}}</td>
+          <td>{{appointment.comment}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>

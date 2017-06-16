@@ -23,7 +23,18 @@ const failureIndex = (error) => {
 };
 
 const successShow = (data) => {
-  let doctorUpdateHtml = doctorUpdateHandlebars({ doctor: data.doctor });
+  console.log(data.doctor.id);
+  console.log(store.appointments);
+  let doctorAppointments = [];
+  for(let i=0;i<store.appointments.length;i++){
+    if (store.appointments[i].doctor_id ===data.doctor.id){
+      doctorAppointments.push(store.appointments[i]);
+    }
+  }
+  let doctorUpdateHtml = doctorUpdateHandlebars({
+    doctor: data.doctor,
+    appointments: doctorAppointments,
+  });
   $('.doctor-update').html(doctorUpdateHtml);
   $('.doctors').hide();
   $('#doctor-create-btn').hide();

@@ -39,19 +39,19 @@
           Phone:
           <input value={{patient.phone}} pattern=".{1,}" required title="1 characters minimum" type="text" name="patient[phone]" maxlength="30">
           Primary Doctor:
-          <input value={{patient.primary_doctor}} type="text" name="patient[primary_doctor]" maxlength="30">
+          <textarea pattern=".{1,}" required title="1 characters minimum" type="input" name="patient[primary_doctor]" maxlength="30" rows="10" cols="30">{{patient.primary_doctor}}</textarea>
         <input class="btn btn-danger" type="submit" name="submit" value="Change">
       </fieldset>
     </form>
   </div>
 
+  <br>
+  <br>
 
-  <br>
-  <br>
   <div class="patient-details-child" id="patient-appointments">
     <table id="t01">
 
-      <h3 id="patient-appointments-header">Appointments</h3>
+      <h3 id="patient-appointments-header">Appointments With Doctor</h3>
 
       <tr>
         <th>Doctor</th>

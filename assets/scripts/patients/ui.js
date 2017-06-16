@@ -23,9 +23,17 @@ const failureIndex = (error) => {
 };
 
 const successShow = (data) => {
+  console.log(data.patient.id);
+  console.log(store.appointments);
+  let patientAppointments = [];
+  for(let i=0;i<store.appointments.length;i++){
+    if (store.appointments[i].patient_id ===data.patient.id){
+      patientAppointments.push(store.appointments[i]);
+    }
+  }
   let patientUpdateHtml = patientUpdateHandlebars({
     patient: data.patient,
-    appointments: store.appointments,
+    appointments: patientAppointments,
   });
   $('.patient-update').html(patientUpdateHtml);
   $('.patients').hide();

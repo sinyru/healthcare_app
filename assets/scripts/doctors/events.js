@@ -4,13 +4,20 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 const store = require('../store');
+const appointmentApi = require('../appointments/api');
 
 
 const onDoctorIndex = function(event) {
   event.preventDefault();
-  api.doctorIndex()
-  .then(ui.successIndex)
-  .catch(ui.failureIndex);
+  appointmentApi.appointmentIndex()
+  .then((response)=>{
+    store.appointments = response.appointments;
+  })
+  .then(()=>{
+    api.doctorIndex()
+    .then(ui.successIndex)
+    .catch(ui.failureIndex);
+  });
 };
 
 const onDoctorCreate = function(event) {
