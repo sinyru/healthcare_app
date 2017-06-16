@@ -30,7 +30,7 @@
           Phone:
           <input value={{doctor.phone}} pattern=".{1,}" required title="1 characters minimum" type="text" name="doctor[phone]" maxlength="30">
           Location:
-          <textarea value={{doctor.location}} pattern=".{1,}" required title="1 characters minimum" type="input" name="doctor[location]" maxlength="30" rows="1">{{doctor.location}}</textarea>
+          <textarea value={{doctor.location}} pattern=".{1,}" required title="1 characters minimum" type="input" name="doctor[location]" maxlength="30" rows="10" columns="30">{{doctor.location}}</textarea>
         <input class="btn btn-danger" type="submit" name="submit" value="Change">
       </fieldset>
     </form>

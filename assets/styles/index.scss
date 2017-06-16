@@ -10,51 +10,21 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   display:none;
 }
 
-.patient-details-child {
+.patient-details-child, .doctor-details-child {
   float: left;
   width: 45%;
 }
 
-.doctor-details-child {
-  float: left;
-  width: 45%;
-}
-
-#patient-create {
+#patient-create, #doctor-create, #appointment-create, #drug-create {
   display:none;
   width:100px;
 }
 
-#patient-update-form{
+#patient-update-form, #doctor-update-form, #appointment-update-form, #drug-update-form {
   width:100px;
 }
 
-#doctor-create {
-  display:none;
-  width:100px;
-}
-
-#doctor-update-form{
-  width:100px;
-}
-
-#appointment-create {
-  display:none;
-  width:100px;
-}
-
-#appointment-update-form{
-  width:100px;
-}
-
-#patient-appointments-header {
-  background-color: black;
-  color: white;
-  border: 3px solid rgba(40, 57, 101, 0.9);
-  text-align: center;
-}
-
-#doctor-appointments-header {
+#patient-appointments-header, #doctor-appointments-header {
   background-color: black;
   color: white;
   border: 3px solid rgba(40, 57, 101, 0.9);
@@ -64,6 +34,16 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 textarea {
   max-width: 197px;
   max-height: 1.5em;
+}
+
+.appointment-comment, .drug-description {
+  max-width:400px;
+  max-height: 8em;
+}
+
+select {
+  width: 197px;
+  height: 1.5em;
 }
 
 table {

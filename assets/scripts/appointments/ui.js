@@ -19,6 +19,8 @@ const successIndex = (data) => {
   $('.patient-show').hide();
   $('.doctor-display').hide();
   $('.doctor-show').hide();
+  $('.drug-display').hide();
+  $('.drug-show').hide();
 };
 
 const failureIndex = (error) => {

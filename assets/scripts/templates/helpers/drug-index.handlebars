@@ -1,0 +1,36 @@
+<br>
+
+<button class="btn btn-primary" id="drug-create-btn">Register New Drug</button>
+
+<br>
+
+<form id="drug-create">
+  <fieldset>
+    Drug Name:
+    <textarea pattern=".{1,}" required title="1 characters minimum" type="input" name="drug[name]" maxlength="30" rows="1"></textarea>
+    Description:
+    <textarea class="drug-description" pattern=".{1,}" required title="1 characters minimum" type="input" name="drug[description]" maxlength="30" rows="10" cols="30"></textarea>
+    <input class="btn btn-danger" type="submit" name="submit" value="Register">
+  </fieldset>
+</form>
+
+<br>
+
+<div class="drugs">
+<table id="t01">
+  <tr>
+    <th>Drug Name</th>
+    <th>Details</th>
+    <th>Remove</th>
+  </tr>
+
+  {{#each drugs as |drug|}}
+    <tr>
+      <td>{{drug.name}}</td>
+      <td><button class="btn btn-primary btn-xs" id="drug-update" data-id={{drug.id}}>Details</button></td>
+      <td><button class="btn btn-danger btn-xs" id="drug-delete" data-id={{drug.id}}>X</button></td>
+    </tr>
+  {{/each}}
+
+</table>
+</div>
