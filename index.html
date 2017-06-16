@@ -21,6 +21,27 @@
 
         <h1 class="logo"><span>Heathcare Management System</span></h1>
         <div class="after-login">
+
+          <button type="button" class="btn btn-danger btn-xs instructions-btn" data-toggle="modal" data-target=".bs-example-modal-lg">Instructions</button>
+          <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content instructions">
+
+                  <h4 class="instructions-header">Instructions</h4>
+                  <ol>
+                    <li>To create new patients, you must have all fields filled.</li>
+                    <li>To create new doctors, you must have all fields filled.</li>
+                                      <li>To create new drugs, you must have all fields filled.</li>
+                    <li>To create new appointments, you must have all fields filled, and have both patients and doctors registered.</li>
+                    <li>To create new prescriptions, you must have all fields filled, and have patients, doctors, and drugs registered.</li>
+                    <li>To make adjustments/updates, you can click on detail button under details section, and then change accordingly. All fields must be filled as well.</li>
+                    <li>To delete records, you can click on the X button under remove section.</li>
+                  </ol>
+
+              </div>
+            </div>
+          </div>
+
           <button class="btn btn-xs" id="btn-change-password">Change Password</button>
           <form id="sign-out">
             <fieldset>

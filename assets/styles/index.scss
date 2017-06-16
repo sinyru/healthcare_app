@@ -10,6 +10,20 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   display:none;
 }
 
+.instructions {
+  color: black;
+  text-align: left;
+}
+
+.instructions-header {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.instructions-btn {
+  border: 2px solid rgba(40,57,101,.9);
+}
+
 .patient-details-child, .doctor-details-child {
   float: left;
   width: 45%;
