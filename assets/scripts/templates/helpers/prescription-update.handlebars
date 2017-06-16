@@ -1,0 +1,60 @@
+<div class="prescription-show">
+<table id="t01">
+  <tr>
+    <th>Patient</th>
+    <th>Drug</th>
+    <th>Duration</th>
+    <th>Drug Description</th>
+    <th>Phramacy Location</th>
+    <th>Prescibed By</th>
+    <th>Prescribed On</th>
+    <th>Usage Direction</th>
+  </tr>
+
+  <tr>
+    <td>{{prescription.patient_name}}</td>
+    <td>{{prescription.drug_name}}</td>
+    <td>{{prescription.duration}}</td>
+    <td>{{prescription.drug_description}}</td>
+    <td>{{prescription.pharmacy_location}}</td>
+    <td>{{prescription.doctor_name}}</td>
+    <td>{{prescription.prescripted_on}}</td>
+    <td>{{prescription.usage_direction}}</td>
+  </tr>
+</table>
+
+<form id="prescription-update-form">
+  <fieldset>
+    Drug:
+    <select name="prescription[drug_id]">
+      <option selected disabled>Select Drug</option>
+      {{#each drugs as |drug|}}
+        <option  value={{drug.id}}>{{drug.name}}</option>
+      {{/each}}
+    </select>
+
+    Patient:
+    <select name="prescription[patient_id]">
+      <option selected disabled>Select Patient</option>
+      {{#each patients as |patient|}}
+        <option  value={{patient.id}}>{{patient.first_name}} {{patient.last_name}}</option>
+      {{/each}}
+    </select>
+
+    Doctor:
+    <select name="prescription[doctor_id]">
+      <option selected disabled>Select Doctor</option>
+      {{#each doctors as |doctor|}}
+        <option  value={{doctor.id}}>{{doctor.first_name}} {{doctor.last_name}}</option>
+      {{/each}}
+    </select>
+
+    Duration:
+    <textarea pattern=".{1,}" required title="1 characters minimum" type="input" name="prescription[duration]" maxlength="30" rows="1">{{prescription.duration}}</textarea>
+    Pharmacy Locaion:
+    <textarea pattern=".{1,}" required title="1 characters minimum" type="input" name="prescription[pharmacy_location]" maxlength="50" rows="1">{{prescription.pharmacy_location}}</textarea>
+    Usage Directions:
+    <textarea class="prescription-description" pattern=".{1,}" required title="1 characters minimum" type="input" name="prescription[usage_direction]" maxlength="200" rows="10" cols="30">{{prescription.usage_direction}}</textarea>
+    <input class="btn btn-danger" type="submit" name="submit" value="Change">
+  </fieldset>
+</form>

@@ -15,12 +15,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: 45%;
 }
 
-#patient-create, #doctor-create, #appointment-create, #drug-create {
+#patient-create, #doctor-create, #appointment-create, #drug-create, #prescription-create {
   display:none;
   width:100px;
 }
 
-#patient-update-form, #doctor-update-form, #appointment-update-form, #drug-update-form {
+#patient-update-form, #doctor-update-form, #appointment-update-form, #drug-update-form, #prescription-update-form {
   width:100px;
 }
 

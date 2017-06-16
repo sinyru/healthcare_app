@@ -18,6 +18,8 @@ const successIndex = (data) => {
   $('.appointment-show').hide();
   $('.drug-display').hide();
   $('.drug-show').hide();
+  $('.prescription-display').hide();
+  $('.prescription-show').hide();
 };
 
 const failureIndex = (error) => {

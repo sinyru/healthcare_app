@@ -7,7 +7,7 @@ const patients = require('./patients/events.js');
 const doctors = require('./doctors/events.js');
 const appointments = require('./appointments/events.js');
 const drugs = require('./drugs/events.js');
-
+const prescriptions = require('./prescriptions/events.js');
 
 
 $(() => {
@@ -17,6 +17,7 @@ $(() => {
   doctors.addHandlers();
   appointments.addHandlers();
   drugs.addHandlers();
+  prescriptions.addHandlers();
 });
 
 $("#btn-change-password").on('click', ()=>{
@@ -57,5 +58,11 @@ $(".drug-display").on('click', "#drug-create-btn", ()=>{
   $('#drug-create-btn').hide();
 });
 
+$(".prescription-display").on('click', "#prescription-create-btn", ()=>{
+  $('.prescriptions').hide();
+  $('#prescription-create').show();
+  $('.prescription-show').hide();
+  $('#prescription-create-btn').hide();
+});
 
 require('./example');

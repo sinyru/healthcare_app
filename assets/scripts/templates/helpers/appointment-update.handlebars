@@ -28,12 +28,14 @@
       <textarea value={{appointment.location}} pattern=".{1,}" required title="1 characters minimum" type="input" name="appointment[location]" maxlength="60" rows="1">{{appointment.location}}</textarea>
       Patient:
       <select class="appointment-patients" name="appointment[patient_id]">
+        <option selected disabled>Select Patient</option>
         {{#each patients as |patient|}}
           <option  value={{patient.id}}>{{patient.first_name}} {{patient.last_name}}</option>
         {{/each}}
       </select>
       Doctor:
       <select class="appointment-doctors" name="appointment[doctor_id]">
+        <option selected disabled>Select Doctor</option>
         {{#each doctors as |doctor|}}
           <option  value={{doctor.id}}>{{doctor.first_name}} {{doctor.last_name}}</option>
         {{/each}}
