@@ -5,6 +5,8 @@ const api = require('./api');
 const ui = require('./ui');
 const store = require('../store');
 const appointmentApi = require('../appointments/api');
+const prescriptionApi = require('../prescriptions/api');
+
 
 
 const onPatientIndex = function(event) {
@@ -12,6 +14,10 @@ const onPatientIndex = function(event) {
   appointmentApi.appointmentIndex()
   .then((response)=>{
     store.appointments = response.appointments;
+  })
+  .then(()=>{
+    prescriptionApi.prescriptionIndex()
+    .then((response)=> store.prescriptions = response.prescriptions);
   })
   .then(()=>{
     api.patientIndex()

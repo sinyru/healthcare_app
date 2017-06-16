@@ -68,5 +68,28 @@
         </tr>
       {{/each}}
     </table>
+
+    <br>
+    <br>
+
+    <h3 id="patient-prescriptions-header">Prescriptions</h3>
+
+    <table id="t01">
+      <tr>
+        <th>Prescriptions</th>
+        <th>Usage Directions</th>
+        <th>Duration</th>
+        <th>Prescripted On</th>
+      </tr>
+
+      {{#each prescriptions as |prescription|}}
+        <tr>
+          <td>{{prescription.drug_name}}</td>
+          <td>{{prescription.usage_direction}}</td>
+          <td>{{prescription.duration}}</td>
+          <td>{{prescription.prescripted_on}}</td>
+        </tr>
+      {{/each}}
+
   </div>
 </div>

@@ -30,14 +30,21 @@ const successShow = (data) => {
   console.log(data.patient.id);
   console.log(store.appointments);
   let patientAppointments = [];
+  let patientPrescriptions = [];
   for(let i=0;i<store.appointments.length;i++){
     if (store.appointments[i].patient_id ===data.patient.id){
       patientAppointments.push(store.appointments[i]);
     }
   }
+  for(let i=0;i<store.prescriptions.length;i++){
+    if (store.prescriptions[i].patient_id ===data.patient.id){
+      patientPrescriptions.push(store.prescriptions[i]);
+    }
+  }
   let patientUpdateHtml = patientUpdateHandlebars({
     patient: data.patient,
     appointments: patientAppointments,
+    prescriptions: patientPrescriptions,
   });
   $('.patient-update').html(patientUpdateHtml);
   $('.patients').hide();
