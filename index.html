@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Healthcare App</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <!-- Stylesheets css -->
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    </head>
+    <body class="container-fluid">
+      <header id="main-nav" class="page-header clearfix">
+
+        <h1 class="logo"><span>Heathcare Management System</span></h1>
+        <div class="after-login">
+
+          <button type="button" class="btn btn-danger btn-xs instructions-btn" data-toggle="modal" data-target=".bs-example-modal-lg">Instructions</button>
+          <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content instructions">
+
+                  <h4 class="instructions-header">Instructions</h4>
+                  <ol>
+                    <li>To create new patients, you must have all fields filled.</li>
+                    <li>To create new doctors, you must have all fields filled.</li>
+                                      <li>To create new drugs, you must have all fields filled.</li>
+                    <li>To create new appointments, you must have all fields filled, and have both patients and doctors registered.</li>
+                    <li>To create new prescriptions, you must have all fields filled, and have patients, doctors, and drugs registered.</li>
+                    <li>To make adjustments/updates, you can click on detail button under details section, and then change accordingly. All fields must be filled as well.</li>
+                    <li>To delete records, you can click on the X button under remove section.</li>
+                  </ol>
+
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-xs" id="btn-change-password">Change Password</button>
+          <form id="sign-out">
+            <fieldset>
+              <button class="btn btn-xs" type="submit" name="submit">Sign Out</button>
+            </fieldset>
+          </form>
+        </div>
+      </header>
+
+      <div class="change-password-div">
+        <form id="change-password">
+          <fieldset>
+            <label class="old">
+              Old Password
+              <input type="password" name="passwords[old]">
+            </label>
+            <label class="new">
+              New Password
+              <input type="password" name="passwords[new]">
+            </label>
+            <br>
+            <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+          </fieldset>
+        </form>
+
+        <button class="btn btn-danger" id="cancel-change-password">Cancel</button>
+      </div>
+
+      <div class="before-login">
+      	<div class="login-html">
+      		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+      		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+      		<div class="login-form">
+            <!-- sign in form -->
+      			<div class="sign-in-htm">
+
+              <form id="sign-in">
+        				<div class="group">
+        					<label for="user" class="label">Username</label>
+        					<input id="user" type="text" name="credentials[email]" class="input">
+        				</div>
+        				<div class="group">
+        					<label for="pass" class="label">Password</label>
+        					<input id="pass" type="password" class="input" name="credentials[password]" data-type="password">
+        				</div>
+        				<div class="group">
+        					<input type="submit" class="button" value="Sign In">
+        				</div>
+              </form>
+
+      				<div class="hr"></div>
+      			</div>
+            <!-- sign up form -->
+      			<div class="sign-up-htm">
+              <form id="sign-up">
+        				<div class="group">
+        					<label for="user" class="label">Username</label>
+        					<input id="user" type="text" name="credentials[email]" class="input">
+        				</div>
+        				<div class="group">
+        					<label for="pass" class="label">Password</label>
+        					<input id="pass" type="password" name="credentials[password]" class="input" data-type="password">
+        				</div>
+        				<div class="group">
+        					<label for="pass" class="label">Repeat Password</label>
+        					<input id="pass" type="password" name="credentials[password_confirmation]" class="input" data-type="password">
+        				</div>
+        				<div class="group">
+        					<input type="submit" class="button" value="Sign Up">
+        				</div>
+              </form>
+
+      				<div class="hr"></div>
+      				<div class="foot-lnk">
+      					<label for="tab-1">Already Member?</a>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+
+      <div class="after-login">
+
+        <div id="nav-panel">
+          <nav>
+            <ul>
+              <li><button class="btn btn-primary sections appointment-index">Appointments</button></li>
+              <li><button class="btn btn-primary sections doctor-index">Doctors</button></li>
+              <li><button class="btn btn-primary sections drug-index">Drugs</button></li>
+              <li><button class="btn btn-primary sections patient-index">Patients</button></li>
+              <li><button class="btn btn-primary sections prescription-index">Prescriptions</button></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="patient-display"></div>
+        <div class="patient-update"></div>
+
+        <div class="doctor-display"></div>
+        <div class="doctor-update"></div>
+
+        <div class="appointment-display"></div>
+        <div class="appointment-update"></div>
+
+        <div class="drug-display"></div>
+        <div class="drug-update"></div>
+
+        <div class="prescription-display"></div>
+        <div class="prescription-update"></div>
+
+      </div>
+
+    </body>
+</html>
